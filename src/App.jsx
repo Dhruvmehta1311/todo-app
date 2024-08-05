@@ -1,6 +1,8 @@
 import lightdesktop from "./assets/images/bg-desktop-light.jpg";
 import lightmobile from "./assets/images/bg-mobile-light.jpg";
 import moon from "./assets/images/icon-moon.svg";
+import iconCheck from "./assets/images/icon-check.svg";
+import { useState } from "react";
 
 function App() {
   return (
@@ -11,6 +13,11 @@ function App() {
 }
 
 function Header() {
+  const [isChecked, setIsChecked] = useState(false);
+
+  function toggleCheck() {
+    setIsChecked((isChecked) => !isChecked);
+  }
   return (
     <div className="font-josefin relative pt-16 sm:pt-20">
       <div className="absolute w-full -z-10 top-0 left-0">
@@ -33,10 +40,18 @@ function Header() {
               placeholder="Create a New Todo"
             />
 
-            <input
-              className="absolute top-2.5 left-2.5 w-radio h-radio "
-              type="checkbox"
-            />
+            <div
+              className={`absolute top-1.5 left-2.5 flex items-center justify-center w-6 h-6 rounded-full cursor-pointer ${
+                isChecked
+                  ? "bg-gradient-to-r from-[hsl(192,100%,67%)] to-[hsl(280,87%,65%)]"
+                  : "border border-gray-300"
+              }`}
+              onClick={toggleCheck}
+            >
+              {isChecked && (
+                <img src={iconCheck} className="w-3 h-3" alt="Check Icon" />
+              )}
+            </div>
           </div>
         </form>
       </main>
