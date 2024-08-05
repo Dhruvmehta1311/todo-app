@@ -22,7 +22,7 @@ function Header() {
           <p className="text-3xl sm:text-4xl text-white font-medium">T O D O</p>
           <img className="h-8 cursor-pointer" src={moon} alt="" />
         </div>
-        <div className="w-full bg-green-500 relative">
+        <div className="w-full  relative">
           <input
             className="w-full h-[40px] text-center rounded-lg"
             type="text"
