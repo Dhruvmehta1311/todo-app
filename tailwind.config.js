@@ -2,7 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        radio: "20px",
+      },
+      height: {
+        radio: "20px",
+      },
+    },
   },
   plugins: [],
 };
