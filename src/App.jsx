@@ -12,14 +12,16 @@ function App() {
 
 function Header() {
   return (
-    <div className="font-josefin relative p-20">
+    <div className="font-josefin relative pt-16 sm:pt-20">
       <div className="absolute w-full -z-10 top-0 left-0">
         <img className="w-full hidden sm:block" src={lightdesktop} alt="" />
         <img className="w-full sm:hidden" src={lightmobile} alt="" />
       </div>
-      <main className="p-4 border max-w-[500px] w-[90%] mx-auto flex flex-col gap-4">
-        <div className="flex w-full justify-between">
-          <h2 className="text-white text-4xl font-bold">TODO APP</h2>
+      <main className="flex flex-col gap-4 max-w-[500px] w-[90%] mx-auto ">
+        <div className="flex w-full justify-between items-center">
+          <h2 className="text-white text-3xl sm:text-4xl font-bold">
+            TODO APP
+          </h2>
           <img className="h-8" src={moon} alt="" />
         </div>
 
