@@ -4,6 +4,7 @@ import moon from "./assets/images/icon-moon.svg";
 
 import { useState } from "react";
 import Checkbox from "./components/Checkbox";
+import Todo from "./components/Todo";
 function App() {
   return (
     <div>
@@ -45,12 +46,13 @@ function Header() {
           </div>
 
           {/* Todos */}
-          <section className=" w-full">
+          <section className=" w-full  rounded-md overflow-hidden ">
             {/* Single Todo */}
-            <div className="w-full bg-white h-[50px] border shadow-md rounded-md relative flex items-center px-12">
-              <Checkbox />
-              <p>Lorem ipsum dolor sit.</p>
-            </div>
+
+            <Todo />
+            <Todo />
+            <Todo />
+            <Todo />
           </section>
         </form>
       </main>
