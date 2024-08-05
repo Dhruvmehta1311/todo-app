@@ -12,30 +12,32 @@ function App() {
 
 function Header() {
   return (
-    <div className="font-josefin">
-      <div className="">
+    <div className="font-josefin relative p-20">
+      <div className="absolute w-full -z-10 top-0 left-0">
         <img className="w-full hidden sm:block" src={lightdesktop} alt="" />
         <img className="w-full sm:hidden" src={lightmobile} alt="" />
       </div>
-      <div className=" flex justify-between  p-4 items-center  max-w-[370px] sm:max-w-[570px] w-[90%] mx-auto relative z-10 sm:mt-[-200px] mt-[-150px] flex-col gap-6 sm:gap-10">
-        <div className="flex items-center justify-between w-full">
-          <p className="text-3xl sm:text-4xl text-white font-medium">T O D O</p>
-          <img className="h-8 cursor-pointer" src={moon} alt="" />
+      <main className="p-4 border max-w-[500px] w-[90%] mx-auto flex flex-col gap-4">
+        <div className="flex w-full justify-between">
+          <h2 className="text-white text-4xl font-bold">TODO APP</h2>
+          <img className="h-8" src={moon} alt="" />
         </div>
-        <div className="w-full relative">
-          <input
-            className="w-full h-[40px] pl-14 rounded-lg outline-none placeholder:font-josefin"
-            type="text"
-            placeholder="Create a New Todo"
-          />
-          <input
-            className="absolute w-radio h-radio top-2.5 left-4 "
-            type="radio"
-            name=""
-            id=""
-          />
-        </div>
-      </div>
+
+        <form>
+          <div className="relative">
+            <input
+              className="w-full h-[40px] pl-14 rounded-md outline-none"
+              type="text"
+              placeholder="Create a New Todo"
+            />
+
+            <input
+              className="absolute top-2.5 left-2.5 w-radio h-radio "
+              type="checkbox"
+            />
+          </div>
+        </form>
+      </main>
     </div>
   );
 }
