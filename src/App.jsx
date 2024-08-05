@@ -55,7 +55,7 @@ function Header() {
             <Todo />
 
             {/* footer */}
-            <div className="w-full bg-white border h-[40px] flex items-center justify-between px-2 text-gray-400">
+            <div className="w-full bg-white border h-[50px] flex items-center justify-between px-4 text-gray-400 ">
               <p>5 items left</p>
               <div className="flex gap-4">
                 <p className="cursor-pointer">All</p>
