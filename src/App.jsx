@@ -12,7 +12,7 @@ function App() {
 
 function Header() {
   return (
-    <div className="">
+    <div className="font-josefin">
       <div className="">
         <img className="w-full hidden sm:block" src={lightdesktop} alt="" />
         <img className="w-full sm:hidden" src={lightmobile} alt="" />
@@ -22,9 +22,9 @@ function Header() {
           <p className="text-3xl sm:text-4xl text-white font-medium">T O D O</p>
           <img className="h-8 cursor-pointer" src={moon} alt="" />
         </div>
-        <div className="w-full  relative">
+        <div className="w-full relative">
           <input
-            className="w-full h-[40px] text-center rounded-lg"
+            className="w-full h-[40px] pl-14 rounded-lg outline-none placeholder:font-josefin"
             type="text"
             placeholder="Create a New Todo"
           />
