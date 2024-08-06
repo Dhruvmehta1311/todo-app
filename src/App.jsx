@@ -29,6 +29,8 @@ function Header() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
+    if (!newTodo.trim()) return;
+
     const newTodoItem = {
       id: todos.length + 1,
       task: newTodo,
@@ -37,6 +39,7 @@ function Header() {
     console.log(newTodoItem);
 
     setTodos([...todos, newTodoItem]);
+    setNewTodo("");
   }
 
   return (
@@ -56,6 +59,7 @@ function Header() {
         <form onSubmit={handleFormSubmit} className="flex flex-col gap-6">
           <div className="relative">
             <input
+              value={newTodo}
               onChange={todoInput}
               className="w-full h-[50px] pl-14 rounded-md outline-none"
               type="text"
