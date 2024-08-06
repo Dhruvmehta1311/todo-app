@@ -53,6 +53,10 @@ function Header({ darkModeHandler, dark }) {
     setNewTodo("");
   }
 
+  function handleClearAll() {
+    setTodos([]);
+  }
+
   return (
     <div className="font-josefin relative pt-16 sm:pt-20">
       <div className="absolute w-full -z-10 top-0 left-0">
@@ -126,7 +130,12 @@ function Header({ darkModeHandler, dark }) {
                 <p className="cursor-pointer">Active</p>
                 <p className="cursor-pointer">Completed</p>
               </div>
-              <p className="text-center">Clear Completed</p>
+              <p
+                onClick={handleClearAll}
+                className="text-center cursor-pointer"
+              >
+                Clear All
+              </p>
             </div>
           </section>
         </form>
