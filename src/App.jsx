@@ -10,7 +10,7 @@ import sun from "./assets/images/icon-sun.svg";
 import Checkbox from "./components/Checkbox";
 import Todo from "./components/Todo";
 function App() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   function darkModeHandler() {
     setDark(!dark);
     document.body.classList.toggle("dark");

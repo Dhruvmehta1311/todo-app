@@ -17,16 +17,24 @@ const Todo = ({ todo, todoId, setTodos, todos, dark }) => {
     <div
       className={`w-full ${
         dark ? "bg-slate-700" : "bg-white"
-      } h-[60px] border shadow-md relative flex items-center justify-between px-12 dark:text-white`}
+      } h-[60px] dark:border-black border shadow-md relative flex items-center justify-between pl-12 dark:text-white`}
     >
       <Checkbox todo={todo} isChecked={isChecked} setIsChecked={setIsChecked} />
-      <p className={`${isChecked ? "line-through" : null}`}>{todo.task}</p>
-      <img
-        onClick={handleDelete}
-        className="cursor-pointer h-4 "
-        src={iconCross}
-        alt=""
-      />
+      <div className="flex justify-between w-full pr-6">
+        <p
+          className={`${isChecked ? "line-through" : null} ${
+            dark ? "text-white" : "text-gray-800"
+          }`}
+        >
+          {todo.task}
+        </p>
+        <img
+          onClick={handleDelete}
+          className="cursor-pointer h-4 "
+          src={iconCross}
+          alt=""
+        />
+      </div>
     </div>
   );
 };
