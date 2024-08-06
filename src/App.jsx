@@ -1,3 +1,4 @@
+import { useState } from "react";
 import lightdesktop from "./assets/images/bg-desktop-light.jpg";
 import lightmobile from "./assets/images/bg-mobile-light.jpg";
 import moon from "./assets/images/icon-moon.svg";
@@ -13,38 +14,31 @@ function App() {
 }
 
 function Header() {
-  const todos = [
-    {
-      id: 1,
-      task: "Complete JavaScript course",
-      completed: false,
-      date: "2024-08-10",
-    },
-    {
-      id: 2,
-      task: "Write blog post about React",
-      completed: true,
-      date: "2024-08-01",
-    },
-    {
-      id: 3,
-      task: "Grocery shopping",
-      completed: false,
-      date: "2024-08-05",
-    },
-    {
-      id: 4,
-      task: "Schedule dentist appointment",
-      completed: false,
-      date: "2024-08-12",
-    },
-    {
-      id: 5,
-      task: "Read a chapter of 'Clean Code'",
-      completed: false,
-      date: "2024-08-03",
-    },
-  ];
+  const [newTodo, setNewTodo] = useState("");
+  const [todos, setTodos] = useState([
+    { id: 1, task: "Complete JavaScript course" },
+    { id: 2, task: "Write blog post about React" },
+    { id: 3, task: "Grocery shopping" },
+    { id: 4, task: "Schedule dentist appointment" },
+    { id: 5, task: "Read a chapter of 'Clean Code'" },
+  ]);
+
+  function todoInput(e) {
+    setNewTodo(e.target.value);
+    // console.log(newTodo);
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const newTodoItem = {
+      id: todos.length + 1,
+      task: newTodo,
+    };
+
+    console.log(newTodoItem);
+
+    setTodos([...todos, newTodoItem]);
+  }
 
   return (
     <div className="font-josefin relative pt-16 sm:pt-20">
@@ -60,9 +54,10 @@ function Header() {
           <img className="h-8" src={moon} alt="" />
         </div>
 
-        <form className="flex flex-col gap-6">
+        <form onSubmit={handleFormSubmit} className="flex flex-col gap-6">
           <div className="relative">
             <input
+              onChange={todoInput}
               className="w-full h-[50px] pl-14 rounded-md outline-none"
               type="text"
               placeholder="Create a New Todo"
