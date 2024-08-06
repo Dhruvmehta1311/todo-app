@@ -2,7 +2,6 @@ import lightdesktop from "./assets/images/bg-desktop-light.jpg";
 import lightmobile from "./assets/images/bg-mobile-light.jpg";
 import moon from "./assets/images/icon-moon.svg";
 
-import { useState } from "react";
 import Checkbox from "./components/Checkbox";
 import Todo from "./components/Todo";
 function App() {
@@ -14,12 +13,6 @@ function App() {
 }
 
 function Header() {
-  const [isChecked, setIsChecked] = useState(false);
-
-  function toggleCheck() {
-    setIsChecked((isChecked) => !isChecked);
-  }
-
   return (
     <div className="font-josefin relative pt-16 sm:pt-20">
       <div className="absolute w-full -z-10 top-0 left-0">
@@ -42,7 +35,7 @@ function Header() {
               placeholder="Create a New Todo"
             />
 
-            <Checkbox toggleCheck={toggleCheck} isChecked={isChecked} />
+            <Checkbox />
           </div>
 
           {/* Todos */}
