@@ -13,6 +13,39 @@ function App() {
 }
 
 function Header() {
+  const todos = [
+    {
+      id: 1,
+      task: "Complete JavaScript course",
+      completed: false,
+      date: "2024-08-10",
+    },
+    {
+      id: 2,
+      task: "Write blog post about React",
+      completed: true,
+      date: "2024-08-01",
+    },
+    {
+      id: 3,
+      task: "Grocery shopping",
+      completed: false,
+      date: "2024-08-05",
+    },
+    {
+      id: 4,
+      task: "Schedule dentist appointment",
+      completed: false,
+      date: "2024-08-12",
+    },
+    {
+      id: 5,
+      task: "Read a chapter of 'Clean Code'",
+      completed: false,
+      date: "2024-08-03",
+    },
+  ];
+
   return (
     <div className="font-josefin relative pt-16 sm:pt-20">
       <div className="absolute w-full -z-10 top-0 left-0">
@@ -42,20 +75,19 @@ function Header() {
           <section className=" w-full  rounded-md overflow-hidden ">
             {/* Single Todo */}
 
-            <Todo />
-            <Todo />
-            <Todo />
-            <Todo />
+            {todos.map((todo) => (
+              <Todo todo={todo} key={todo.id} />
+            ))}
 
             {/* footer */}
-            <div className="w-full bg-white border h-[50px] flex items-center justify-between px-4 text-gray-400 ">
+            <div className="w-full bg-white border min-h-[50px] flex items-center justify-between px-2 text-gray-400 ">
               <p>5 items left</p>
-              <div className="flex gap-4">
+              <div className="flex gap-2">
                 <p className="cursor-pointer">All</p>
                 <p className="cursor-pointer">Active</p>
                 <p className="cursor-pointer">Completed</p>
               </div>
-              <p>Clear Completed</p>
+              <p className="text-center">Clear Completed</p>
             </div>
           </section>
         </form>

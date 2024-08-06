@@ -5,6 +5,7 @@ const Checkbox = ({ isChecked, setIsChecked }) => {
   function toggleCheck() {
     setIsChecked((isChecked) => !isChecked);
   }
+
   return (
     <div
       onClick={toggleCheck}
