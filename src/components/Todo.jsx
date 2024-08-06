@@ -4,7 +4,7 @@ import iconCross from "../assets/images/icon-cross.svg";
 import { useState } from "react";
 import Checkbox from "./Checkbox";
 
-const Todo = ({ todo, todoId, setTodos, todos }) => {
+const Todo = ({ todo, todoId, setTodos, todos, dark }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   function handleDelete(e) {
@@ -14,12 +14,16 @@ const Todo = ({ todo, todoId, setTodos, todos }) => {
     setTodos(todos.filter((todo) => todo.id != todoId));
   }
   return (
-    <div className="w-full bg-white h-[60px] border shadow-md  relative flex items-center justify-between px-12">
+    <div
+      className={`w-full ${
+        dark ? "bg-slate-700" : "bg-white"
+      } h-[60px] border shadow-md relative flex items-center justify-between px-12 dark:text-white`}
+    >
       <Checkbox todo={todo} isChecked={isChecked} setIsChecked={setIsChecked} />
       <p className={`${isChecked ? "line-through" : null}`}>{todo.task}</p>
       <img
         onClick={handleDelete}
-        className="cursor-pointer h-4"
+        className="cursor-pointer h-4 "
         src={iconCross}
         alt=""
       />
