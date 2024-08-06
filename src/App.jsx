@@ -28,10 +28,10 @@ function Header({ darkModeHandler, dark }) {
   const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useState([
     { id: 1, task: "Complete JavaScript course" },
-    // { id: 2, task: "Write blog post about React" },
-    // { id: 3, task: "Grocery shopping" },
-    // { id: 4, task: "Schedule dentist appointment" },
-    // { id: 5, task: "Read a chapter of 'Clean Code'" },
+    { id: 2, task: "Write blog post about React" },
+    { id: 3, task: "Grocery shopping" },
+    { id: 4, task: "Schedule dentist appointment" },
+    { id: 5, task: "Read a chapter of 'Clean Code'" },
   ]);
 
   function todoInput(e) {
