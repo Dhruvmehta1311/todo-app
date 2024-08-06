@@ -90,7 +90,7 @@ function Header({ darkModeHandler, dark }) {
               value={newTodo}
               onChange={todoInput}
               className={`w-full h-[50px] pl-14 rounded-md outline-none ${
-                dark ? "bg-slate-700" : "bg-white"
+                dark ? "bg-slate-700 text-white" : "bg-white"
               }`}
               type="text"
               placeholder="Create a New Todo"
