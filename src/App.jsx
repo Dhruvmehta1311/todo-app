@@ -74,13 +74,19 @@ function Header() {
             {/* Single Todo */}
 
             {todos.map((todo) => (
-              <Todo todo={todo} key={todo.id} />
+              <Todo
+                setTodos={setTodos}
+                todos={todos}
+                todoId={todo.id}
+                todo={todo}
+                key={todo.id}
+              />
             ))}
 
             {/* footer */}
             <div className="w-full bg-white border min-h-[50px] flex items-center justify-between px-2 text-gray-400 ">
               <p>{todos.length} items left</p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 py-4">
                 <p className="cursor-pointer">All</p>
                 <p className="cursor-pointer">Active</p>
                 <p className="cursor-pointer">Completed</p>
