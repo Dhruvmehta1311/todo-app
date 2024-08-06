@@ -79,7 +79,7 @@ function Header() {
 
             {/* footer */}
             <div className="w-full bg-white border min-h-[50px] flex items-center justify-between px-2 text-gray-400 ">
-              <p>5 items left</p>
+              <p>{todos.length} items left</p>
               <div className="flex gap-2">
                 <p className="cursor-pointer">All</p>
                 <p className="cursor-pointer">Active</p>
